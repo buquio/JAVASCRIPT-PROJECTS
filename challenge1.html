@@ -1,0 +1,54 @@
+
+<!--
+// Challenge 1: 
+ Update text in the Scrimba mini-browser.
+// 1. change the innerhtml of h1 to "Creating and modifying HTML elements"
+// 2. Create an h2 with class 'tagline' and add text "I can create HTML elements!"
+// & append it under h1 by adding it right under the modified text.
+-->
+
+<html>
+    <head>        
+<style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: rgb(255, 231, 105);
+                color: #484848;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .tagline {
+                color: #00B1D2FF
+            }
+</style> 
+
+</head>
+    
+    <body>
+        <h1 id="code">Coding challenge</h1>
+        
+    </body>
+    <script>
+// 1.
+// let title = document.getElementById("code");
+// console.log(title)
+
+// title.innerHTML = "Creating and modifying HTML elements";
+//2
+const tagline = document.createElement('h2');
+tagline.className = 'tagline';
+tagline.innerHTML = 'I can create HTML elements!';
+
+// title.append(tagline);
+   
+</script>
+</html>
+
+

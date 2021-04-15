@@ -1,0 +1,76 @@
+<html>
+<head>
+</head>
+<body>
+<!--<img src="bulboff.jpg" height=200 width=200 id="imm" align="right">-->
+    
+    <img id="myImage" src="img_bulboff.jpg" style="width:100px">
+
+<button>switch</button>
+
+<script type="text/javascript">
+
+function bulb() {
+//    function switch() {
+
+
+//var b = document.getElementById("imm");
+    var img=document.getElementById('myImage')
+button.addeventlistener('click',function(){
+
+
+//if(b.src.match("bulboff.jpg")) {
+    if(img.src.match("img_bulboff.jpg")) {
+
+// b.src = "bulbon.jpg";
+         img.src = "img_bulbon.jpg";
+
+}
+ else {
+
+// b.src="bulboff.jpg";
+      img.src="img_bulboff.jpg";
+
+}
+}
+ setInterval(bulb,100);
+//     setInterval(bulb,100);
+
+</script>
+</body>
+</html>
+
+
+
+<!--xxxtest2-->
+<!DOCTYPE html>
+<html>
+    <head></head>
+<body>
+
+<button class="btn turnOn">Turn on the light</button>
+     <button class="btn turnOff">Turn off the light</button>
+<img id="myImage" src="img_bulboff.jpg" style="width:100px">
+<script>
+(function(){
+var img = document.querySelector('#myImage').src
+  var buttons = document.querySelectorAll('.btn')
+
+ 
+  buttons.forEach(function(button){
+    button.addEventListener('click', function(){
+      if (button.classList.contains('turnOff')){      
+     img.src = "img_bulboff.jpg";
+
+}
+
+      } else if (button.classList.contains('turnOn')){
+                 img.src = "img_bulbon.jpg";
+
+      }
+});
+</script>
+</body>
+</html>
+
+
