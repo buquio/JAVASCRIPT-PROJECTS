@@ -9,23 +9,23 @@
     "contBcg-4"
   ];
 
-  //select both left and right button. Add event listeners
-  const buttons = document.querySelectorAll('.btn')
+  
+  const buttons = document.querySelectorAll('.btn') //select both left and right button. Add event listeners
   const imageDIV = document.querySelector('.img-container')
   let counter = 0
 
   buttons.forEach(function(button){
     button.addEventListener('click', function(e){
       if (button.classList.contains('btn-left')){
-        counter--
-        if(counter < 0){//i,e less than pic1
-          counter = pictures.length -1//means it will go back to the last pic4
+        counter--  //count is -1
+        if(counter < 0){ //if -1 < 0   =true
+          counter = pictures.length -1//means counter will be the last pic4
         }
         imageDIV.style.backgroundImage = `url('./img/${pictures[counter]}.jpeg')`
       }
       if (button.classList.contains('btn-right')){
-        counter++
-        if(counter > pictures.length -1){ // greater than the last pic
+        counter++   //count is 1
+        if(counter > pictures.length -1){ // if 1 >greater than the last pic(-1)
           counter = 0 //it will go to the first pic
         }
         imageDIV.style.backgroundImage = `url('./img/${pictures[counter]}.jpeg')`
