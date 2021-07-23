@@ -22,10 +22,12 @@
           counter = pictures.length -1//means counter will be the last pic4
         }
         imageDIV.style.backgroundImage = `url('./img/${pictures[counter]}.jpeg')`
+        // explanation
+        // -->`url('./img/${pictures[4]}.jpeg')`--> `url('./img/"contBcg-4.jpeg')`
       }
       if (button.classList.contains('btn-right')){
         counter++   //count is 1
-        if(counter > pictures.length -1){ // if 1 >greater than the last pic(-1)
+        if(counter > pictures.length -1){ // if counter is greater than the position of d last pic(-1)
           counter = 0 //it will go to the first pic
         }
         imageDIV.style.backgroundImage = `url('./img/${pictures[counter]}.jpeg')`

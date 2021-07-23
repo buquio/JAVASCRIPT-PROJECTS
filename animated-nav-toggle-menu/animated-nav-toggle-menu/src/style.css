@@ -48,17 +48,23 @@ body{
     z-index: 3;
 }
 
-.menu-toggle div{
+.menu-toggle div{   /* div one, two */
     background-color: #ccc;
     border-radius: 25px;
     box-shadow: 0px 3px 13px rgba(0,0,0,.3);
     height: 7px;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(.13,.24,.35,1.64);
+    
 }
 
-.menu-toggle .one,
+/* .menu-toggle .one,
 .menu-toggle .two{
+    margin-bottom: 7px;
+} */
+
+.one,
+.two{
     margin-bottom: 7px;
 }
 
@@ -76,9 +82,9 @@ body{
     font-size: 1.1rem;
     letter-spacing: 1.7px;
     line-height: 1.35;
-         color: #ccc;
-         transition-delay: 150ms;
-         transition-duration: 850ms;
+    color: #ccc;
+    transition-delay: 150ms;
+    transition-duration: 850ms;
 }
 
 /*** Just getting silly now ***************************/
@@ -186,11 +192,11 @@ body{
 /*** Just getting silly now ***************************/
 .wrapper.active p{
      color: rgb(50, 101, 134);
-               transition-delay: 150ms;
+     transition-delay: 150ms;
      transition-duration: 350ms;
 }
 
 .main-footer.active span{
      color: rgb(50, 101, 134);
-          transition-duration: 350ms;
+     transition-duration: 350ms;
 }
