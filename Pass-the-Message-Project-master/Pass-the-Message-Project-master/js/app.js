@@ -9,9 +9,9 @@ form.addEventListener('submit', function(e){
 
     
         //Get user's input from the inputbox
-    const message = document.querySelector('#message')
+    const message = document.querySelector('#message') //input.value
     const feedback = document.querySelector('.feedback')
-    const messageContent = document.querySelector('.message-content')
+    const messageContent = document.querySelector('.message-content') //message-box
 // run alert if submit is clicked and inputbox is empty 
     if (message.value === ''){
         feedback.classList.add('show')

@@ -1,20 +1,24 @@
-
-var noon = 12;
-var evening = 18;
 var wakeuptime = 7;
+var noon = 12;
 var lunchtime = 12;
 var naptime = lunchtime + 2;
+var evening = 18;
 var partytime;
 
 
-// Getting it to show the current time on the page //1. getcurrent time //2. display/show currentTime
 
-//1. getcurrent time
-var currentTime = new Date();
+
+// Getting it to show the current time on the page
+var showCurrentTime = function()
+{
+    // display the currentTime on the webpage
+    var clock = document.getElementById('clock');
  
-    var hours = currentTime.getHours();
-    var minutes = currentTime.getMinutes();
-    var seconds = currentTime.getSeconds();
+    var currentDate = new Date();
+ 
+    var hours = currentDate.getHours();
+    var minutes = currentDate.getMinutes();
+    var seconds = currentDate.getSeconds();
     var meridian = "AM";
  
     // Set hours
@@ -41,87 +45,74 @@ var currentTime = new Date();
     }
  
     // put together the string that displays the time
-     var clockTime = hours + ':' + minutes + ':' + seconds + " " + meridian + "!";
+     var currentTime = hours + ':' + minutes + ':' + seconds + " " + meridian + "!";
  
-//2. display/show currentTime
-var showCurrentTime = function() {
-    var clock = document.getElementById('clock');
- 
-    clock.innerText = clockTime;
+    clock.innerText = currentTime;
 };
-    
-    
+
+
+
 //a. Getting the clock to change/update messages & pictures as the time clocks:party time,wakeup time,lunch time,nap time,noon time,evening time.
 //b.display the update by grabbing the timeevent space and display it there.
-
-//update Clock
-var updateClock = function() 
-{
-//  var time = new Date().getHours();
-//    or
-  var time =  currentTime.getHours();
+var updateClock = function() {
+  var currentHour = new Date().getHours();
   var messageText;
-  var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
+  var imageUrl = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
 
+  var timeEventJS = document.getElementById("timeEvent");
+  var lolcatImageJS = document.getElementById('lolcatImage');
   
-  if (time == partytime)
+  if (currentHour == partytime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
+    imageUrl = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
     messageText = "Let's party!";
   }
-  else if (time == wakeuptime)
+  else if (currentHour == wakeuptime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
+    imageUrl = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
     messageText = "Wake up!";
   }
-  else if (time == lunchtime)
+  else if (currentHour == lunchtime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
+    imageUrl = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
     messageText = "Let's have some lunch!";
   }
-  else if (time == naptime)
+  else if (currentHour == naptime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
+    imageUrl = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
     messageText = "Sleep tight!";
   }
-  else if (time < noon)
+  else if (currentHour < noon)
   {
-    image = "https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg";
+    imageUrl = "https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg";
     messageText = "Good morning!";
   }
   else if (time >= evening)
   {
-    image = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cat_sleep.jpg";
+    imageUrl = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cat_sleep.jpg";
     messageText = "Good evening!";
   }
   else
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
+    imageUrl = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
     messageText = "Good afternoon!";
   }
-//  console.log(messageText); 
-  
-    //b.display the update by grabbing the timeevent space and display it there.
-  var timeEventJS = document.getElementById("timeEvent");
-  var lolcatImageJS = document.getElementById('lolcatImage');
- 
+
+  // console.log(messageText); 
   timeEventJS.innerText = messageText;
-  lolcatImage.src = image;
-  
+  lolcatImageJS.src = imageUrl;
   showCurrentTime();
 };
 updateClock();
 
 // Getting the clock to increment once a second
-//var oneSecond = 1000;
-//setInterval( updateClock, oneSecond);
-
-setInterval( updateClock, 1000);
-
+var oneSecond = 1000;
+setInterval( updateClock, oneSecond);
 
 
 // Getting the Party Time Button To Work
 var partyButton = document.getElementById("partyTimeButton");
+partyButton.addEventListener("click", partyEvent);
 
 var partyEvent = function()
 {
@@ -133,44 +124,41 @@ var partyEvent = function()
     }
     else
     {
-        partytime = -1;
+        partytime = -1; //if you set party time to 9 d/4 9-1 indicte partytime less by 1
         partyTimeButton.innerText = "Party Time!";
         partyTimeButton.style.backgroundColor = "#222";
     }
 };
 
-partyButton.addEventListener("click", partyEvent);
 partyEvent(); 
 
 
 // Activates Wake-Up selector
 var wakeUpTimeSelector =  document.getElementById("wakeUpTimeSelector");
+wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
 
-var wakeUpEvent = function()
-{
+var wakeUpEvent = function(){
     wakeuptime = wakeUpTimeSelector.value;
 };
 
-wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
 
 
 // Activates Lunch selector
 var lunchTimeSelector =  document.getElementById("lunchTimeSelector");
+lunchTimeSelector.addEventListener("change", lunchEvent);
 
-var lunchEvent = function()
-{
+
+var lunchEvent = function(){
     lunchtime = lunchTimeSelector.value;
 };
 
-lunchTimeSelector.addEventListener("change", lunchEvent);
 
 
 // Activates Nap-Time selector
 var napTimeSelector =  document.getElementById("napTimeSelector");
-
-var napEvent = function()
-{
-    naptime = nap TimeSelector.value;
-};
-
 napTimeSelector.addEventListener("change", napEvent);
+
+
+var napEvent = function(){
+    naptime = napTimeSelector.value;
+};

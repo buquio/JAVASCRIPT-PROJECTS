@@ -1,8 +1,9 @@
-.max-height {
-  min-height: 100vh;
-}
+
 body {
   background: #b09e99;
+}
+.max-height {
+  min-height: 100vh;
 }
 .quote-container {
   background: rgba(255, 255, 255, 0.5);

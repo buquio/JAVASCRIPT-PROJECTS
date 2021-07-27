@@ -11,7 +11,7 @@
       } else if (button.classList.contains('nextBtn')){
         count++
       }
-
+// count vs counter 
       //Select the counter text
       const counter = document.querySelector('#counter')
       counter.textContent = count

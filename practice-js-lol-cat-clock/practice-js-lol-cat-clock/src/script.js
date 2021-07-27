@@ -121,16 +121,12 @@ setInterval( updateClock, oneSecond);
 // Getting the Party Time Button To Work
 var partyButton = document.getElementById("partyTimeButton");
 
-var partyEvent = function()
-{
-    if (partytime < 0) 
-    {
+var partyEvent = function(){
+    if (partytime < 0) {
         partytime = new Date().getHours();
         partyTimeButton.innerText = "Party Over!";
         partyTimeButton.style.backgroundColor = "#0A8DAB";
-    }
-    else
-    {
+    }else{
         partytime = -1;
         partyTimeButton.innerText = "Party Time!";
         partyTimeButton.style.backgroundColor = "#222";
@@ -144,8 +140,7 @@ partyEvent();
 // Activates Wake-Up selector
 var wakeUpTimeSelector =  document.getElementById("wakeUpTimeSelector");
 
-var wakeUpEvent = function()
-{
+var wakeUpEvent = function(){
     wakeuptime = wakeUpTimeSelector.value;
 };
 
@@ -155,8 +150,7 @@ wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
 // Activates Lunch selector
 var lunchTimeSelector =  document.getElementById("lunchTimeSelector");
 
-var lunchEvent = function()
-{
+var lunchEvent = function(){
     lunchtime = lunchTimeSelector.value;
 };
 
@@ -166,9 +160,8 @@ lunchTimeSelector.addEventListener("change", lunchEvent);
 // Activates Nap-Time selector
 var napTimeSelector =  document.getElementById("napTimeSelector");
 
-var napEvent = function()
-{
-    naptime = nap TimeSelector.value;
+var napEvent = function(){
+    naptime = napTimeSelector.value;
 };
 
 napTimeSelector.addEventListener("change", napEvent);

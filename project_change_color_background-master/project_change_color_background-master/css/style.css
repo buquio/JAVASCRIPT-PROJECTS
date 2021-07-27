@@ -1,3 +1,8 @@
 button {
-    margin-top: 50vh
+    margin-top: 30vh
+}
+.container{
+    width: 50%;
+    height: 500px;
+    margin: 200px auto;
 }

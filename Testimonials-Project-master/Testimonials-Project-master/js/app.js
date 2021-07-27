@@ -7,8 +7,6 @@
     const customers = []
 
     //Create a new customer using a customer constructor
-    
-    //Customer Constructor
     function Customer(img, name, text) {
         this.img = img
         this.name = name
@@ -16,7 +14,6 @@
     }
 
     //Create new customer using the constructor function
-
     function createCustomer(img, name, text) {
 
         let fullImg = `./img/customer-${img}.jpg`

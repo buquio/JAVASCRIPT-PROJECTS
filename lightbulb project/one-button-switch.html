@@ -1,0 +1,28 @@
+<!-- //USING ONE BUTTON TO SWITCH ON AND OFF ????? -->
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <img id="myImage" src="img_bulboff.jpg" style="width:100px">
+    <button id="btn">switch</button>
+
+<script>
+            (function bulb() {
+            var button = document.getElementById('btn')
+            var img = document.getElementById('myImage')
+
+            button.addeventlistener('click', function(){
+                if(img.src.match("img_bulboff.jpg")) {
+                        img.src = "img_bulbon.jpg";
+                }
+                else {
+                    img.src="img_bulboff.jpg";
+                }
+            });
+                //  setInterval(bulb, 1000);
+        })()
+            
+</script>
+</body>
+</html>

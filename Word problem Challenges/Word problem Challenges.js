@@ -10,20 +10,24 @@ xxx
     5. log out the current list of products.
     Note: After creating the initial array do not just create a brand new array. Modify it accordingly.
 */
-
+// 1.
 const products = ["toilet paper", "bottled water", "sanitizer"];
+// 2.
 products[0] = "paper towels";
+// 3.
 products.pop();
+// 4.
 products.push("bleach");
-
-                 var product = products.filter(product => product.startsWith('b'))
-                // var product = products.filter(product => product.includes('paper'))
-                // var product = products.filter(product => product.length)
-                // var product = products.filter(product => product.toUpperCase)
-
-document.write(products)
-console.log(product) //all the product aftr filter
+// 5.
 console.log(products)//all the product aftr changes
+
+// practising
+var product = products.filter(product => product.startsWith('b'))
+// var product = products.filter(product => product.includes('paper'))
+// var product = products.filter(product => product.length)
+// var product = products.filter(product => product.toUpperCase)
+
+console.log(product) //all the product aftr filter
 
 
 xxx
@@ -34,16 +38,17 @@ xxx
     4. The business wants to give more personalized ads and wants to collect information about the user's hobbies. Create a list of hobbies.
     5. Are they a gold member? Store a boolean with this value.
 */
+// 1.
 const user = {
     firstName: 'Dylan',
     lastName: 'Israel'
 };
-
+// 2.
 user['address'] = {
     city: 'Tampa',
     state: 'Florida'
 };
-
+// 3.
 user.hobbies = ['Anime', 'Coding', 'Dating', 'Gaming'];
 user.isGoldMember = true;
 
@@ -84,7 +89,7 @@ const customerAnswer = Math.random() >= 0.5;
 let quantity = 2;
 
 if(customerAnswer) {
-    quantity++; // quantity = quantity + 1;
+    quantity++; // quantity + 1;
 }
 
 console.log(quantity)
@@ -110,7 +115,7 @@ if(age <= 12) {
 }
 
 // Challenge 2: Practice and or Operators
-//    1. Look at the examples below and see if you can guess the 
+//    1. Look at the examples below and see if you can guess the anwser
 
 // console.log(10 === 10 && 5 < 4);// false
 // console.log(10 === 10 || 5 < 4);// true
@@ -162,7 +167,7 @@ switch (userType) {
     break;
 }
 
-xxx
+xxx///////
 let total = 0;
 
 let numArray = [10, 20, 30, 40, 50, 60, 70, 80];
@@ -172,7 +177,7 @@ for (let i = 0; i < numArray.length; i++) {
     total += numArray[i];
 }
 
-// console.log(total);
+console.log(total);
 
 
 
