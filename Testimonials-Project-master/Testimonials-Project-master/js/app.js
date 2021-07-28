@@ -11,11 +11,11 @@
         this.img = img
         this.name = name
         this.text = text
+        // let customer = new Customer(fullImg, name, text) //do this inside a fumction cos of fullImage
     }
 
     //Create new customer using the constructor function
     function createCustomer(img, name, text) {
-
         let fullImg = `./img/customer-${img}.jpg`
         let customer = new Customer(fullImg, name, text)
 
